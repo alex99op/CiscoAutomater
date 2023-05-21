@@ -1,0 +1,11 @@
+Cisco commands wiki
+en
+conf t
+interface GigabitEthernet
+interface FastEthernet
+Vlan x
+Switchport
+Switchport access
+Switchport access Trunk
+noshutdown
+set clock time
