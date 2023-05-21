@@ -1,5 +1,4 @@
 #import standard config txt
-import shutil
 
 
 def vlan():
@@ -14,20 +13,28 @@ def noshut():
 	print("What ")
 
 def hostname():
-    hostname = input("Write your new hostname\n> ")
-    #En kommando som endrer hostname i eksport fila.
-     
+	"Changes the hostname in export file"
+ 
+	new_hostname = input("Write your new hostname\n> ")
+	f =open("running-config.txt", "r")
+	tekst = f.read()
+	tekst = tekst.replace("old_Switch", new_hostname)
+	f.close()
+	f = open("running-config.txt", "w")
+	f.write(tekst)
+	print(f"Hostname changed to {new_hostname}")	
+		
+	
 def running_config():
 	print("Showing current config made:")
 
 
 def switch():
 	"Main menu for switch"
-	src_file = 'file.txt'
-	dst_file = 'new_file.txt'
+	src_file = 'switchTemplate.txt'
+	dst_file = 'running-config.txt'
 
-shutil.copy(src_file, dst_file)
-    #En kommando som kopierer switch mal til ny output fil.
+	shutil.copy(src_file, dst_file)
 	print("\n### Switch menu ###")
 	print("1. Create Vlan")	
 	print("2. Create Trunk")
