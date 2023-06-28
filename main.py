@@ -1,5 +1,5 @@
 #import standard config txt
-
+#oki
 
 def vlan():
 	print("Write your Vlans")
