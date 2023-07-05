@@ -1,4 +1,4 @@
-#import standard config txt
+import shutil
 #oki
 
 def vlan():
@@ -16,7 +16,7 @@ def hostname():
 	"Changes the hostname in export file"
  
 	new_hostname = input("Write your new hostname\n> ")
-	f =open("running-config.txt", "r")
+	f = open("running-config.txt", "r")
 	tekst = f.read()
 	tekst = tekst.replace("old_Switch", new_hostname)
 	f.close()
@@ -40,7 +40,7 @@ def switch():
 	print("2. Create Trunk")
 	print("3. Change noshutdown")
 	print("4. Change hostname")
-	print("5. Show config")
+	print("5. Show config\n")
 	user_input = input("> ")
   
 	menu = {
